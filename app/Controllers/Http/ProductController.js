@@ -34,7 +34,8 @@ class ProductController {
    */
   async store ({ request, response }) {
 
-    const { id } = auth.user
+    let num_id = 0
+    const { id } = num_id
     const data = request.only([
       'qr_code',
       'name',
@@ -45,7 +46,7 @@ class ProductController {
     ])
 
     const product = await Product.create({ ...data, user_id: id })
-
+    num_id +=1
     return product
   }
 
