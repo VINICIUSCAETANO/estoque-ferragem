@@ -38,7 +38,7 @@ module.exports = {
     | instead report them to a URL.
     |
     */
-    reportOnly: false,
+    reportOnly: true,
     /*
     |--------------------------------------------------------------------------
     | Set all headers
@@ -79,7 +79,7 @@ module.exports = {
   |
   */
   xss: {
-    enabled: true,
+    enabled: false,
     enableOnOldIE: false
   },
 
@@ -133,13 +133,15 @@ module.exports = {
   */
   csrf: {
     enable: false,
-    methods: ['POST', 'PUT', 'DELETE'],
+    methods: [],
     filterUris: [],
     cookieOptions: {
+      /*
       httpOnly: false,
       sameSite: true,
       path: '/',
       maxAge: 7200
+      */
     }
   }
 }
