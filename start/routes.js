@@ -19,8 +19,6 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-const Route = use('Route')
-
 Route.post('users', 'UserController.create')
 
 //controller de produtos
