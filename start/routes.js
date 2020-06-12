@@ -19,13 +19,9 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-/*
-const User = use('App/Models/User')
-Route.get('users/:id', ({ params }) => {
-  const proms =  `Usuário: ${User.find(params.id)}`
-  console.log(proms)
-})
-*/
+const Route = use('Route')
+
+Route.post('/users', 'UserController.create')
 
 //controller de produtos
 Route.resource('products', 'ProductController')
