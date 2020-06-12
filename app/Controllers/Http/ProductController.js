@@ -35,7 +35,7 @@ class ProductController {
   async store ({ request, response }) {
 
     let num_id = 0
-    const id = num_id
+    const { id } = num_id
     const data = request.only([
       'qr_code',
       'name',
