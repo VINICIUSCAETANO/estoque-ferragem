@@ -1,5 +1,7 @@
 'use strict'
 
+const UserController = require('../app/Controllers/Http/UserController')
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,7 @@ const Route = use('Route')
 //Route.on('/').render('welcome')
 
 Route.post('/users', 'UserController.create')
+Route.get('/users', 'UserController.index')
 Route.post('/sessions', 'SessionController.create')
 
 //controller de produtos

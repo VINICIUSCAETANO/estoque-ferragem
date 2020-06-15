@@ -10,6 +10,12 @@ class UserController {
     
         return user
       }
+
+    async index () {
+        const users = User.all()
+      
+        return users
+    }
 }
 
 module.exports = UserController
