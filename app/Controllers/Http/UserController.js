@@ -16,6 +16,12 @@ class UserController {
       
         return users
     }
+
+    async show ({ params }) {
+        const user = await User.findOrFail(params.id)
+      
+        return user
+    }
 }
 
 module.exports = UserController
