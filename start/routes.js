@@ -17,9 +17,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+//Route.on('/').render('welcome')
 
-Route.post('users', 'UserController.create')
+Route.post('/users', 'UserController.create')
+Route.post('/sessions', 'SessionController.create')
 
 //controller de produtos
 Route.resource('products', 'ProductController')
