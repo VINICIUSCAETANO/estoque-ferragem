@@ -25,6 +25,7 @@ const Route = use('Route')
 Route.post('/users', 'UserController.create')
 Route.get('/users', 'UserController.index')
 Route.get('users/:id', 'UserController.show')
+Route.put('users/:id', 'UserController.update')
 
 //Sessions
 Route.post('/sessions', 'SessionController.create')
