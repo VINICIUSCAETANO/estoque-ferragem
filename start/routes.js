@@ -26,6 +26,7 @@ Route.post('/users', 'UserController.create')
 Route.get('/users', 'UserController.index')
 Route.get('users/:id', 'UserController.show')
 Route.put('users/:id', 'UserController.update')
+Route.delete('users/:id', 'UserController.destroy')
 
 //Sessions
 Route.post('/sessions', 'SessionController.create')
