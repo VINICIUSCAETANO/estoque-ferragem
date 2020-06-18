@@ -33,4 +33,3 @@ Route.post('/sessions', 'SessionController.create')
 
 //controller de produtos
 Route.resource('products', 'ProductController')
-.middleware('auth')

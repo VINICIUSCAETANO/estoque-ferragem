@@ -55,7 +55,7 @@ class ProductController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store ({ request, auth }) {
     const { id } = auth.user
     const data = request.only([
       'qr_code',
