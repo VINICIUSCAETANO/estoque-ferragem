@@ -1,5 +1,4 @@
 'use strict'
-const Product = use('App/Models/Product')
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -19,10 +18,34 @@ class ProductController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-    const products = Product.all()
-    return products
+      const products = Products.all()
+      return products
   }
 
+  /**
+   * Render a form to be used for creating a new product.
+   * GET products/create
+   *
+   * @param {object} ctx
+   * @param {Request} ctx.request
+   * @param {Response} ctx.response
+   * @param {View} ctx.view
+   */
+  async create ({ request, response, view }) {
+
+    const data = request.only([
+      'qr_code',
+      'name',
+      'description',
+      'buying_price',
+      'selling_price',
+      'ipi_tax'
+    ])
+
+    const product = await Product.create(data)
+
+    return product
+  }
 
   /**
    * Create/save a new product.
@@ -33,9 +56,7 @@ class ProductController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
-
-    let num_id = 0
-    const { id } = num_id
+    const { id } = auth.user
     const data = request.only([
       'qr_code',
       'name',
@@ -44,9 +65,9 @@ class ProductController {
       'selling_price',
       'ipi_tax'
     ])
-
+  
     const product = await Product.create({ ...data, user_id: id })
-    num_id +=1
+  
     return product
   }
 
@@ -60,8 +81,20 @@ class ProductController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
-    const product = await Product.findOrFail(params.id)
-    return product
+      const product = await Product.findOrFail(params.id)
+      return product
+  }
+
+  /**
+   * Render a form to update an existing product.
+   * GET products/:id/edit
+   *
+   * @param {object} ctx
+   * @param {Request} ctx.request
+   * @param {Response} ctx.response
+   * @param {View} ctx.view
+   */
+  async edit ({ params, request, response, view }) {
   }
 
   /**
@@ -73,6 +106,7 @@ class ProductController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+
     const product = await Product.findOrFail(params.id)
 
     const data = request.only([
@@ -102,12 +136,12 @@ class ProductController {
   async destroy ({ params, request, response }) {
     const product = await Product.findOrFail(params.id)
 
-    /* if (product.user_id !== auth.user.id) {
+    if (product.user_id !== auth.user.id) {
       return response.status(401).send({ error: 'Not authorized' })
-    } */
-  
+    }
+
     await product.delete()
-  }
+    }
 }
 
 module.exports = ProductController
