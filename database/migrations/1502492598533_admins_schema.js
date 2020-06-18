@@ -7,8 +7,12 @@ class AdminsSchema extends Schema {
   up () {
     this.create('admins', (table) => {
       table.increments()
-      table.boolean('has_rights').notNullable().defaultTo(false)
-      table.references('id').inTable('users')
+      /*table.boolean('has_rights').notNullable().defaultTo(false)
+      table
+        .integer('user_id')
+        .unsigned()
+        .references('id')
+        .inTable('users')*/
       table.timestamps()
     })
   }
