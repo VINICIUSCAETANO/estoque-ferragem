@@ -7,8 +7,8 @@ const Env = use('Env')
 const Helpers = use('Helpers')
 
 const Url = require('url-parse')
-//const JAWSDB_URL = new Url())
-console.log(Env.get('JAWSDB_URL'))
+//const JAWSDB_URL = new Url()
+//console.log(Env.get('JAWSDB_URL'))
 
 module.exports = {
   /*
@@ -52,7 +52,7 @@ module.exports = {
   |
   */
   
-  /*mysql: {
+  mysql: {
     client: 'mysql',
     connection: {
       host: Env.get('DB_HOST', 'localhost'),
@@ -61,12 +61,12 @@ module.exports = {
       password: Env.get('DB_PASSWORD', ''),
       database: Env.get('DB_DATABASE', 'adonis')
     }
-  },*/
+  },
 
-mysql: {
+/* mysql: {
   client: 'mysql',
   connection: Env.get('JAWSDB_URL')
-},
+}, */
 
   /*
   |--------------------------------------------------------------------------

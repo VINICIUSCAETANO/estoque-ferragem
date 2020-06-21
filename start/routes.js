@@ -19,7 +19,7 @@ const UserController = require('../app/Controllers/Http/UserController')
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-//Route.on('/').render('welcome')
+Route.on('/').render('welcome')
 
 //Users
 Route.post('/users', 'UserController.create')
@@ -32,4 +32,4 @@ Route.delete('users/:id', 'UserController.destroy')
 Route.post('/sessions', 'SessionController.create')
 
 //controller de produtos
-Route.resource('products', 'ProductController')
+Route.resource('products', 'ProductController').apiOnly()
