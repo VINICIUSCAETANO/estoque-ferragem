@@ -52,7 +52,7 @@ module.exports = {
   |
   */
   
-  mysql: {
+/*   mysql: {
     client: 'mysql',
     connection: {
       host: Env.get('DB_HOST', 'localhost'),
@@ -61,12 +61,12 @@ module.exports = {
       password: Env.get('DB_PASSWORD', ''),
       database: Env.get('DB_DATABASE', 'adonis')
     }
-  },
+  }, */
 
-/* mysql: {
+mysql: {
   client: 'mysql',
   connection: Env.get('JAWSDB_URL')
-}, */
+},
 
   /*
   |--------------------------------------------------------------------------
