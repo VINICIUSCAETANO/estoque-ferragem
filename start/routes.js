@@ -32,4 +32,4 @@ Route.delete('users/:id', 'UserController.destroy')
 Route.post('/sessions', 'SessionController.create')
 
 //controller de produtos
-Route.resource('products', 'ProductController').apiOnly()
+Route.resource('products', 'ProductController')
