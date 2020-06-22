@@ -35,12 +35,10 @@ class ProductController {
 
   async store ({ request}) {
     const data = request.only([
-      'qr_code',
       'name',
       'description',
       'buying_price',
-      'selling_price',
-      'ipi_tax'
+      'selling_price'
     ])
   
     const product = await Product.create({ ...data})
@@ -75,12 +73,10 @@ class ProductController {
     const product = await Product.findOrFail(params.id)
 
     const data = request.only([
-      'qr_code',
       'name',
       'description',
       'buying_price',
-      'selling_price',
-      'ipi_tax'
+      'selling_price'
     ])
 
     product.merge(data)
