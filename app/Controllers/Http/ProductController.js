@@ -94,12 +94,8 @@ class ProductController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, auth, request, response }) {
+  async destroy ({ params, request, response }) {
     const product = await Product.findOrFail(params.id)
-
-    if (product.user_id !== auth.user.id) {
-      return response.status(401).send({ error: 'Not authorized' })
-    }
 
     await product.delete()
     }
