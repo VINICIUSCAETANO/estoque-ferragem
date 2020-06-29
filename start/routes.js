@@ -31,5 +31,8 @@ Route.delete('users/:id', 'UserController.destroy')
 //Sessions
 Route.post('/sessions', 'SessionController.create')
 
-//controller de produtos
+//rotas  de recursos de produtos
 Route.resource('products', 'ProductController')
+
+//rotas de recursos de clientes
+Route.resource('clients', 'ClientController')
