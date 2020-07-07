@@ -1,31 +1,24 @@
-# Adonis fullstack application
+# O que é?
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+Sistema de controle de estoque para desenvolvimento de TCC. Parte do usuário, desenvolvido em React.js por Pietro da Silva Klug e Vinicius Besch Caetano.
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+# Como instalar e usar?
 
-## Setup
+Para instalar é simples, siga os passos:
 
-Use the adonis command to install the blueprint
+1. Baixe e instale o [Node.js](https://nodejs.org/en/) na sua máquina (A versão recomendade é a 10.16.x que vem com o npm 5.9.0);
+1. Abra seu prompt de comandos ou terminal;
+1. Navegue até o diretório desejado;
+1. Clone este repositório;
+1. Navegue através do prompt ou terminal para dentro deste repositório;
+1. Instale a CLI do Adonis globalmente com o comando ***# npm i -g @adonisjs/cli***
+1. Digite o comando ***# adonis install***" ou ***# npm install*** para instalar as dependencias do projeto;
+1. Crie um banco de dados mySql na sua máquina local chamado "adonis"
+1. Rode as migrções Do BD com ****# adonis migration:run***
+1. Após terminar o processo, digite o comando "***adonis serve --dev***" para rodar o dervidor;
 
-```bash
-adonis new yardstick
-```
+#### Pronto o O Servidor e o seu Banco de Dados estão rodando.
 
-or manually clone the repo and then run `npm install`.
+# Onde encontro o Frontend?
 
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+Você consegue encontrar o Forntend [clicando aqui](https://gitlab.com/projeto-de-desenvolvimento/controle-de-estoque-vk/web)
