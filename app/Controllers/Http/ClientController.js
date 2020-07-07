@@ -37,7 +37,7 @@ class ClientController {
     const data = request.only([
       'name',
       'cnpj',
-      'addres',
+      'address',
       'city',
       'state',
     ])
@@ -76,7 +76,7 @@ class ClientController {
     const data = request.only([
       'name',
       'cnpj',
-      'addres',
+      'address',
       'city',
       'state'
     ])
