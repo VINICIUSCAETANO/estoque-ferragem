@@ -12,10 +12,10 @@ Para instalar é simples, siga os passos:
 1. Clone este repositório;
 1. Navegue através do prompt ou terminal para dentro deste repositório;
 1. Instale a CLI do Adonis globalmente com o comando ***# npm i -g @adonisjs/cli***
-1. Digite o comando ***# adonis install***" ou ***# npm install*** para instalar as dependencias do projeto;
+1. Digite o comando ***# adonis install*** ou ***# npm install*** para instalar as dependencias do projeto;
 1. Crie um banco de dados mySql na sua máquina local chamado "adonis"
 1. Rode as migrções Do BD com ****# adonis migration:run***
-1. Após terminar o processo, digite o comando "***adonis serve --dev***" para rodar o dervidor;
+1. Após terminar o processo, digite o comando "***# adonis serve --dev***" para rodar o dervidor;
 
 #### Pronto o O Servidor e o seu Banco de Dados estão rodando.
 
