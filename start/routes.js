@@ -22,11 +22,7 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 
 //Users
-Route.post('/users', 'UserController.create')
-Route.get('/users', 'UserController.index')
-Route.get('users/:id', 'UserController.show')
-Route.put('users/:id', 'UserController.update')
-Route.delete('users/:id', 'UserController.destroy')
+Route.resource('users', 'UserController')
 
 //Sessions
 Route.post('/sessions', 'SessionController.create')
