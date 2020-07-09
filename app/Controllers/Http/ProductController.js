@@ -35,6 +35,8 @@ class ProductController {
 
   async store ({ request}) {
     const data = request.only([
+      'code',
+      'nf',
       'name',
       'description',
       'buying_price',
@@ -73,6 +75,8 @@ class ProductController {
     const product = await Product.findOrFail(params.id)
 
     const data = request.only([
+      'code',
+      'nf',
       'name',
       'description',
       'buying_price',
