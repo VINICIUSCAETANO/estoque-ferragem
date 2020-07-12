@@ -7,14 +7,9 @@ class AdminsSchema extends Schema {
   up () {
     this.create('admins', (table) => {
       table.increments()
-      table.boolean('has_rights').notNullable().defaultTo(false)
-      table
-        .integer('user_id')
-        .unsigned()
-        .references('id')
-        .inTable('users')
-        .onUpdate('CASCADE')
-        .onDelete('CASCADE')
+      table.string('username', 20).notNullable().unique()
+      table.string('email', 50).notNullable().unique()
+      table.string('password', 15).notNullable()
       table.timestamps()
     })
   }
