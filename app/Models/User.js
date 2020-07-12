@@ -7,6 +7,15 @@ const Hash = use('Hash')
 const Model = use('Model')
 
 class User extends Model {
+
+  profile () {
+    return this.hasOne('App/Models/SystemUser')
+  }
+
+  profile () {
+    return this.hasOne('App/Models/Client')
+  }
+
   static boot () {
     super.boot()
 

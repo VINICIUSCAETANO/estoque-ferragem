@@ -14,6 +14,12 @@ class ClientsSchema extends Schema {
       table.string('city', 50).notNullable()
       table.string('state', 2).notNullable()
       table.string('zip_number', 10)
+      table.integer('users_id')
+      .unsigned()
+      .references('users.id')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE')
+      .notNullable()
       table.timestamps()
     })
   }
